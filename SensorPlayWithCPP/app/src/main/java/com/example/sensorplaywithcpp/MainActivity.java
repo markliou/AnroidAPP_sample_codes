@@ -31,21 +31,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Example of a call to a native method
-        //TextView tv = findViewById(R.id.sample_text);
-        //tv.setText(stringFromJNI());
+        TextView tv = findViewById(R.id.cpp_info);
+        tv.setText(stringFromJNI());
 
         // show the sensors with sensor manager
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        //List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
-        //for (Sensor s : sensorList){
-        //    Log.d("sensor", "Name=" + s.getName());
-        //    Log.d("sensor", "Vendor=" + s.getVendor());
-        //    Log.d("sensor", "Version=" + s.getVersion());
-        //    Log.d("sensor", "MaximumRange=" + s.getMaximumRange());
-        //    Log.d("sensor", "MinDelay=" + s.getMinDelay());
-        //    Log.d("sensor", "Power=" + s.getPower());
-        //    Log.d("sensor", "Type=" + s.getType());
-        //}
+        List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
+        for (Sensor s : sensorList){
+            Log.d("sensor", "Name=" + s.getName());
+            Log.d("sensor", "Vendor=" + s.getVendor());
+            Log.d("sensor", "Version=" + s.getVersion());
+            Log.d("sensor", "MaximumRange=" + s.getMaximumRange());
+            Log.d("sensor", "MinDelay=" + s.getMinDelay());
+            Log.d("sensor", "Power=" + s.getPower());
+            Log.d("sensor", "Type=" + s.getType());
+        }
 
         // the lottery sample code
         number = findViewById(R.id.number);
