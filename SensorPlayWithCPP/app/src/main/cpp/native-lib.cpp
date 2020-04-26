@@ -1,6 +1,8 @@
 #include <jni.h>
 #include <string>
 
+std::string msg() ;
+
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_sensorplaywithcpp_MainActivity_stringFromJNI(
         JNIEnv* env,
@@ -9,10 +11,15 @@ Java_com_example_sensorplaywithcpp_MainActivity_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
-Java_com_example_sensorplaywithcpp_MainActivity_stringFromJNI(
+extern "C" JNIEXPORT jstring JNICALL
+Java_com_example_sensorplaywithcpp_MainActivity_stringFromJNIMarkMsg(
         JNIEnv* env,
-jobject /* this */) {
-std::string hello = "Hello from C++";
-return env->NewStringUTF(hello.c_str());
+        jobject MainActivity /* this */){
+    std::string hello = msg();
+    return env->NewStringUTF(hello.c_str());
 }
 
+std::string msg(){
+    std::string hello =  "Mark's message" ;
+    return hello;
+}

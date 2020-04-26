@@ -25,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    public native String stringFromJNI();
+    public native String stringFromJNIMarkMsg() ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = findViewById(R.id.cpp_info);
-        tv.setText(stringFromJNI());
+        //tv.setText(stringFromJNI());
+        tv.setText(stringFromJNIMarkMsg());
 
         // show the sensors with sensor manager
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -83,9 +91,5 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
+
 }
