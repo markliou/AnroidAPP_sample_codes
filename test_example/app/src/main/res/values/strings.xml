@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">test_example</string>
+    <string name="cal_invest">cal_invest</string>
+    <string name="principle">principle</string>
+    <string name="profit_rate">profit_rate</string>
+    <string name="invest_year">invest_year</string>
+    <string name="invest_total">invest_total</string>
+    <string name="cal_loan">cal_loan</string>
+    <string name="interest">interest</string>
+    <string name="loan_year">loan_year</string>
+    <string name="repayment">repayment</string>
+    <string name="cal">cal</string>
+    <string name="loan">loan</string>
+</resources>
